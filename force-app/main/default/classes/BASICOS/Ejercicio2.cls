@@ -11,7 +11,6 @@ public with sharing class AccountStatusChecker {
         if (accountId == null) {
             return false;
         }
-        
         Account acc = [SELECT Status__c FROM Account WHERE Id = :accountId LIMIT 1];
         return acc.Status__c == 'Activo';
     }
