@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title="Pokédex Kanto" icon-name="custom:custom19" class="pokedex-card">
+        <div class="slds-grid slds-grid_align-spread slds-p-around_medium">
+            <div class="pokemon-list slds-col slds-size_1-of-4">
+                <template if:true={pokemons}>
+                    <ul class="slds-list_dotted listPokemon">
+                        <template for:each={pokemons} for:item="poke">
+                            <li key={poke.Name} class="slds-list__item slds-m-bottom_small pokemon-item" 
+                                onclick={handlePokemonSelect} 
+                                data-id={poke.Id}>
+                                <div class="slds-media slds-media_center">
+                                    <div class="pokemon-shiny">
+                                        <img src={poke.shinyImageUrl} alt="Shiny Pokémon" class="pokemon-thumbnail" />
+                                    </div>
+                                    <div class="slds-media__figure">
+                                        <img src={poke.imageUrl} alt={poke.Name} class="pokemon-thumbnail"/>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <p class="pokemon-name"><strong>{poke.Name}</strong></p>
+                                        <p class="pokemon-id">#{poke.Id}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:false={pokemons}>
+                    <p>No se encontraron Pokémon.</p>
+                </template>
+
+                <!-- Paginación de la lista -->
+                <div class="pagination-controls">
+                    <lightning-button variant="neutral" label="Previous" onclick={handlePrevious} disabled={isPreviousDisabled}></lightning-button>
+                    <lightning-button variant="neutral" label="Next" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
+                </div>
+            </div>
+
+            <!-- Detalles del Pokémon -->
+            <div class="pokemon-details slds-col slds-size_3-of-4">
+                <template if:true={pokemon}>
+                    <div class="pokemon-container {pokemonBackgroundClass}">
+                        <div class="pokemon-item">
+                            <!-- Imagen grande del Pokémon -->
+                            <img src={pokemon.imageUrl} alt={pokemon.Name} class="pokemon-image"/>
+                            <p><strong>{pokemon.Name}</strong></p>
+                            <p><strong>Pokédex #:</strong> {pokemon.N_en_pokedex__c}</p>
+                            <p><strong>Altura:</strong> {pokemon.Altura__c}m</p>
+                            <p><strong>Peso:</strong> {pokemon.Peso__c}kg</p>
+                            <p><strong>Tipo 1:</strong> {pokemon.Tipo_1__c}</p>
+                            <p><strong>Tipo 2:</strong> {pokemon.Tipo_2__c}</p>
+                            <!-- Imagen Shiny -->
+                            <template if:true={pokemon.shinyImageUrl}>
+                                <div class="shiny-container">
+                                    <img src={pokemon.shinyImageUrl} alt="Shiny Pokémon" class="shiny-image"/>
+                                    <p class="shiny-text">Shiny</p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="pagination-controls">
+                        <lightning-button variant="neutral" label="Previous Pokémon" onclick={handlePreviousPokemon}></lightning-button>
+                        <lightning-button variant="neutral" label="Next Pokémon" onclick={handleNextPokemon}></lightning-button>
+                    </div>
+                </template>
+                <template if:false={pokemon}>
+                    <p>No se encontró Pokémon.</p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

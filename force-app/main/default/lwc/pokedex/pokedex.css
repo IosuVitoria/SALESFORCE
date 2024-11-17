@@ -1,0 +1,146 @@
+.pokemon-item {
+    color: #333;
+    background-color: #4e79f0;
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pokemon-item:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2), -4px -4px 20px rgba(255, 255, 255, 0.6);
+}
+
+
+.pokemon-thumbnail {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+
+.pokemon-item:hover .pokemon-thumbnail {
+    filter: grayscale(0%);
+}
+
+
+.pokemon-name {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.pokemon-id {
+    font-size: 0.9em;
+    color: #fdfdfd;
+}
+
+
+.pokemon-container {
+    background: #f5f5f5;
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pokemon-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 3px solid #ccc;
+    margin-bottom: 15px;
+}
+
+
+.pokemon-container {
+    background: #173ff0;
+    border-radius: 16px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15), -6px -6px 20px rgba(255, 255, 255, 0.6);
+    margin: auto;
+    width: 70%;
+}
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.pokemon-list {
+    background-color: #e03a3a;
+    list-style: none;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 25px;
+}
+
+
+lightning-button {
+    font-weight: bold;
+    color: #fff;
+    background-color: #0099ff;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-left: 5px;
+
+}
+
+.pokedex-card {
+    background-color: #0099ff !important;
+}
+
+.pokemon-thumbnail {
+    width: 50px;
+    height: 50px;
+}
+
+.pokemon-shiny {
+    margin-right: 10px;
+}
+
+.shiny-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.pokemon-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.pokemon-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.shiny-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.shiny-text {
+    font-weight: bold;
+    color: rgb(10, 9, 5);
+}
+
+.pokemon-name {
+    font-size: 1.5rem;
+}
+
+.pokemon-id {
+    font-size: 1.2rem;
+}
