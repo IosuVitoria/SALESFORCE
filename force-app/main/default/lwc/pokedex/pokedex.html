@@ -28,19 +28,17 @@
                     <p>No se encontraron Pokémon.</p>
                 </template>
 
-                <!-- Paginación de la lista -->
+
                 <div class="pagination-controls">
                     <lightning-button variant="neutral" label="Previous" onclick={handlePrevious} disabled={isPreviousDisabled}></lightning-button>
                     <lightning-button variant="neutral" label="Next" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
                 </div>
             </div>
 
-            <!-- Detalles del Pokémon -->
             <div class="pokemon-details slds-col slds-size_3-of-4">
                 <template if:true={pokemon}>
                     <div class="pokemon-container {pokemonBackgroundClass}">
                         <div class="pokemon-item">
-                            <!-- Imagen grande del Pokémon -->
                             <img src={pokemon.imageUrl} alt={pokemon.Name} class="pokemon-image"/>
                             <p><strong>{pokemon.Name}</strong></p>
                             <p><strong>Pokédex #:</strong> {pokemon.N_en_pokedex__c}</p>
@@ -48,7 +46,6 @@
                             <p><strong>Peso:</strong> {pokemon.Peso__c}kg</p>
                             <p><strong>Tipo 1:</strong> {pokemon.Tipo_1__c}</p>
                             <p><strong>Tipo 2:</strong> {pokemon.Tipo_2__c}</p>
-                            <!-- Imagen Shiny -->
                             <template if:true={pokemon.shinyImageUrl}>
                                 <div class="shiny-container">
                                     <img src={pokemon.shinyImageUrl} alt="Shiny Pokémon" class="shiny-image"/>
