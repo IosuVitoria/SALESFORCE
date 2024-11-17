@@ -1,0 +1,17 @@
+<template>
+    <div class="todo-container">
+        <h3>Lista de Tareas</h3>
+        <div class="input-container">
+            <lightning-input label="Nueva tarea" value={newTask} onchange={handleInputChange}></lightning-input>
+            <lightning-button label="Agregar" onclick={addTask} class="add-button"></lightning-button>
+        </div>
+        <ul>
+            <template for:each={tasks} for:item="task">
+                <li key={task.id} class="task-item">
+                    {task.name}
+                    <lightning-button-icon icon-name="utility:delete" alternative-text="Eliminar" onclick={removeTask} data-id={task.id}></lightning-button-icon>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

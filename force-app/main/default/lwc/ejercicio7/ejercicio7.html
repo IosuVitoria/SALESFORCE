@@ -1,0 +1,19 @@
+<template>
+    <div>
+        <h3>Consulta del Clima</h3>
+        <lightning-input label="Ciudad" value={city} onchange={handleCityChange}></lightning-input>
+        <lightning-button label="Obtener Clima" onclick={getWeather}></lightning-button>
+
+        <template if:true={weather}>
+            <div class="weather-info">
+                <h4>Clima en {city}:</h4>
+                <p>Temperatura: {weather.temp}°C</p>
+                <p>Descripción: {weather.description}</p>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="error">Error al obtener el clima: {error}</p>
+        </template>
+    </div>
+</template>

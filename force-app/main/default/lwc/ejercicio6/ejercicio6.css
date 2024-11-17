@@ -1,0 +1,15 @@
+.todo-container {
+    padding: 10px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}

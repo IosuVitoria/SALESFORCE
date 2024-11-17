@@ -1,0 +1,15 @@
+<template>
+    <div>
+        <h3>Lista de Cuentas</h3>
+        <template if:true={accounts}>
+            <ul>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id}>{account.Name}</li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={error}>
+            <p class="error">Error al cargar las cuentas: {error}</p>
+        </template>
+    </div>
+</template>

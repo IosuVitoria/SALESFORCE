@@ -1,0 +1,15 @@
+<template>
+    <div class="table-container">
+        <h3>{title}</h3>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <slot name="header"></slot> 
+                </tr>
+            </thead>
+            <tbody>
+                <slot></slot>
+            </tbody>
+        </table>
+    </div>
+</template>

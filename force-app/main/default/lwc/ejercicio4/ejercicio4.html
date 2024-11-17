@@ -1,0 +1,13 @@
+<template>
+    <div>
+        <form onsubmit={handleSubmit}>
+            <lightning-input label="Nombre" name="nombre" required></lightning-input>
+            <lightning-input label="Email" name="email" type="email" required></lightning-input>
+            <lightning-input label="Teléfono" name="telefono" type="tel" required pattern="[0-9]+"></lightning-input>
+            <lightning-button label="Enviar" type="submit"></lightning-button>
+        </form>
+        <template if:true={formularioValido}>
+            <p class="success">Formulario enviado correctamente.</p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+public with sharing class AccountController {
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAccounts() {
+        return [SELECT Id, Name FROM Account LIMIT 10];
+    }
+}
+
+
+// Pertenece al ejercicio 5 de la carpeta lwc.

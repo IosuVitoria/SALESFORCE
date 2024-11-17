@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <h3>Lista de Productos</h3>
+        <lightning-input label="Buscar Producto" value={searchTerm} onchange={handleSearchChange}></lightning-input>
+        <lightning-button label="Ordenar Ascendente" onclick={sortAsc}></lightning-button>
+        <lightning-button label="Ordenar Descendente" onclick={sortDesc}></lightning-button>
+
+        <ul>
+            <template for:each={filteredProducts} for:item="product">
+                <li key={product.id}>{product.name} - ${product.price}</li>
+            </template>
+        </ul>
+    </div>
+</template>

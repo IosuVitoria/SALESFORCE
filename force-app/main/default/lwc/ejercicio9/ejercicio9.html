@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <h3>Lista de Productos con Filtro y Ordenación</h3>
+        <div class="filter-container">
+            <lightning-input label="Buscar Producto" value={searchTerm} onchange={handleSearchChange}></lightning-input>
+            <lightning-button label="Ordenar Ascendente" onclick={sortAsc}></lightning-button>
+            <lightning-button label="Ordenar Descendente" onclick={sortDesc}></lightning-button>
+        </div>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={filteredProducts} for:item="product">
+                    <tr key={product.id}>
+                        <td>{product.name}</td>
+                        <td>${product.price}</td>
+                        <td>{product.category}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
